@@ -11,12 +11,21 @@ from .serializers import *
 from .models import NAVUser as Users
 from datetime import datetime
 from .helpers import *
+from django.db.models import Q
 
 
 class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
-    queryset = Users.objects.all()
 
+    def get_queryset(self,*args,**kwargs):
+        queryset = Users.objects.all()
+
+        query = self.request.GET.get('q')
+        sort = self.request.GET.get('sort')
+
+        if query:
+            queryset = queryset.filter(Q(first_name__icontains = query) | Q(last_name__icontains = query)).order_by('age')
+        return queryset
 
 
 @api_view(['POST'])
