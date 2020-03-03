@@ -2,7 +2,7 @@ import requests
 import jwt
 
 reqKeysDict = {
-    'users': ['first_name', 'last_name', 'company', 'age', 'city', 'state', 'zip', 'web', 'email']
+    'users': ['first_name', 'last_name', 'company_name', 'email']
 }
 
 

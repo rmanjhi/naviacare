@@ -8,4 +8,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NAVUser
-        fields = '__all__'
+        fields = ('first_name','last_name','company_name','age','city','state','zip','email','web')

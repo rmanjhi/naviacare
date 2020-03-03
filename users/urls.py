@@ -9,7 +9,5 @@ urlpatterns=[
     path('login/', obtain_auth_token, name='obtain_auth_token'),
     path('users/', users_operations, name='users_operations'),
     path('users/', UserListView.as_view()),
-    path('users/<int:pk>', users_modification, name='users_modification'),
-
-
+    path('users/<int:pk>/', users_modification, name='users_modification'),
 ]
