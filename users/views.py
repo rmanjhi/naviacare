@@ -107,4 +107,4 @@ def users_modification(request, pk):
             user_data_qs.update(**update_dict)
             return Response({"message": "User has been updated successfully."}, status=status.HTTP_200_OK)
         else:
-            return Response({"message": "Error occurred while updating the users."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": "Error occurred while updating the user."}, status=status.HTTP_400_BAD_REQUEST)
