@@ -18,6 +18,7 @@ class UserListView(generics.ListAPIView):
     queryset = Users.objects.all()
 
 
+
 @api_view(['POST'])
 # @permission_classes([AllowAny, ])
 def users_operations(request):
@@ -52,7 +53,6 @@ def users_operations(request):
 
 
 @api_view(['PUT', 'DELETE', 'GET'])
-# @permission_classes([AllowAny, ])
 def users_modification(request, pk):
     if request.method == 'GET':
 
